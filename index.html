@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+  <title>geef me geld</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@0.3.0/dist/lottie-player.js"></script>
+  <link href="/dist/output.css" rel="stylesheet">
+</head>
+
+<body>
+  <div id="app">
+    <div class="bg-neutral-100 text-black w-screen h-12 flex justify-center font-bold">
+      <h1 class="w-1/6 text-center">Uitgave toevoegen</h1>
+    </div>
+    <img class="w-screen " src="images/form.svg" />
+    <div
+      class="bg-neutral-100 text-black font-semibold text-sm w-screen h-12 flex justify-between py-2 px-8 content-center">
+      <btn id="all" class="text-cyan-600 hover:bg-orange-600 hover:text-white">Iedereen 1x</btn>
+      <btn id="reset" class="text-orange-600">Reset</btn>
+    </div>
+    <lottie-player id="playerHandler" src="/images/v3.json" class="w-screen"></lottie-player>
+  </div>
+  <script>
+    let player = document.querySelector("lottie-player");
+    let play = document.querySelector("#all");
+    let reset = document.querySelector("#reset");
+
+    play.onclick = function () {
+      player.play();
+      setTimeout(function () {
+        window.location.href = 'reset.html';
+      }, 1500);
+    }
+    reset.onclick = function () {
+      player.stop();
+    }
+  </script>
+</body>
+
+</html>
